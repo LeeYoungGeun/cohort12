@@ -82,7 +82,7 @@ print("\n\n ## 체크포인트 히스토리 ##")
 for idx, state in enumerate(states):
     print(f"\n {idx}. 다음 실행 노드: {state.next}")
     print(f"체크포인트 ID: {state.config['configurable']['checkpoint_id']}")
-    print(f"\nraw: {state}")
+    # print(f"\nraw: {state}")
 
 # 마지막에서 두 번째 상태 선택 (주제는 생성되었지만 농담은 아직 작성되지 않은 시점)
 selected_state = states[2]
@@ -107,9 +107,9 @@ print(f"{list(graph.get_state_history(config))}") #thread_id로 전체 이력을
 
 """
 (원래 실행)
-start → (topic 생성: 개발자 개그) → (joke 생성: 개발자 개그 농담) → END
+start → (topic 생성: 개발자 개그) → (joke 생성: 개발자 개그 농담) → (평가: 개발자 개그 농담) → END
 
                        └─ (update_state로 분기)
-                          (topic=닭, joke 없음) → (joke 생성: 닭 농담) → END
+                          (topic=닭, joke 없음) → (joke 생성: 닭 농담) → (평가: 닭 농담) → END
 
 """
